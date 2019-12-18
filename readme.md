@@ -2,9 +2,10 @@
 
 ## Resources
 
-- Course: [udemy](https://www.udemy.com/course/graphql-by-example/)
+- Course: [udemy](https://www.udemy.com/course/graphql-by-example/) | [github - graphql-job-board](https://github.com/uptoskill/graphql-job-board)
 - GraphQL: [Serving over HTTP](https://graphql.org/learn/serving-over-http/)
 - Apollo Server: [docs](https://www.apollographql.com/docs/) | [Apollo Server](https://www.apollographql.com/docs/apollo-server/)
+- Express.js: [site](http://expressjs.com/)
 
 ## Running project
 
