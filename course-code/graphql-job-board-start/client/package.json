@@ -3,8 +3,8 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build"
+    "start": "set PORT=3050 && npx react-scripts start",
+    "build": "npx react-scripts build"
   },
   "dependencies": {
     "bulma": "0.7.5",
@@ -13,7 +13,7 @@
     "react-router-dom": "5.1.2"
   },
   "devDependencies": {
-    "react-scripts": "3.2.0"
+    "react-scripts": "^3.2.0"
   },
   "browserslist": {
     "production": [
