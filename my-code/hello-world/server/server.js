@@ -4,6 +4,11 @@ import { ApolloServer, gql } from 'apollo-server';
 
 // gql tag parses the template string into a GraphQL Schema
 const typeDefs = gql`
+    schema {
+        query: Query
+        # mutation: mutation
+        # subscription: Subscription
+    }
     type Query {
         greeting: String
     }
@@ -12,7 +17,7 @@ const typeDefs = gql`
 
 const resolvers = {
     Query: {
-        greeting: () => 'Hello GraphQL world!!!'
+        greeting: () => 'Hello GraphQL world!'
     }
 }
 
