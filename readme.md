@@ -4,7 +4,7 @@
 
 - Course: [udemy](https://www.udemy.com/course/graphql-by-example/) | [github - graphql-job-board](https://github.com/uptoskill/graphql-job-board)
 - GraphQL: [Serving over HTTP](https://graphql.org/learn/serving-over-http/)
-- Apollo Server: [docs](https://www.apollographql.com/docs/) | [Apollo Server](https://www.apollographql.com/docs/apollo-server/) | [Integrating with Node.js](https://www.apollographql.com/docs/apollo-server/integrations/middleware/)
+- Apollo Server: [docs](https://www.apollographql.com/docs/) | [Apollo Server](https://www.apollographql.com/docs/apollo-server/) | [Integrating with Node.js](https://www.apollographql.com/docs/apollo-server/integrations/middleware/) | [Gql Playground](https://www.apollographql.com/docs/apollo-server/testing/graphql-playground/)
 - Express.js: [site](http://expressjs.com/)
 - Fake database: [notarealdb](https://www.npmjs.com/package/notarealdb)
 
