@@ -14,6 +14,24 @@ async function graphqlRequest(query, variables={}) {
   return responseBody.data;
 }
 
+export async function createJob(input) {
+  const mutation = `
+  mutation CreateJob($input: CreateJobInput!) {
+    job: createJob(input: $input) {
+      id
+      title
+      description
+      company {
+        name
+      }
+    }
+  }`;
+  const variables = JSON.stringify({ input });
+  console.log(variables);
+  const {job} = await graphqlRequest(mutation, variables);
+  return job;
+}
+
 export async function loadCompany(id) {
   const query = `
   query CompanyQry($id: ID!) {

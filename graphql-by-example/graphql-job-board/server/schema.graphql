@@ -1,5 +1,16 @@
 schema {
-  query: Query
+  query: Query,
+  mutation: Mutation
+}
+
+type Mutation {
+  createJob(input: CreateJobInput!): Job!
+}
+
+input CreateJobInput {
+  companyId: ID,
+  title: String,
+  description: String
 }
 
 type Query {

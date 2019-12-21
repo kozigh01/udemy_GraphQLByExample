@@ -1,5 +1,13 @@
 const db = require('./db');
 
+const Mutation = {
+    createJob: (root, {input}, context) => {
+        const { companyId, title, description } = input;
+        const id = db.jobs.create({companyId, title, description});
+        return db.jobs.get(id);
+    }
+}
+
 const Query = {
     jobs: () => db.jobs.list(),
     job: (root, {id}, context) => db.jobs.get(id),
@@ -22,6 +30,7 @@ const Company = {
 
 module.exports = { 
     Query,
+    Mutation,
     Job,
     Company
 };

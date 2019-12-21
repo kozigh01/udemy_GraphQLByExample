@@ -24,3 +24,70 @@ $ winpty docker run -it --name gbe_client -p 3050:3000 --mount type=bind,source=
 $ docker build -t mkozi/gbe_server -f Dockerfile.dev .
 $ winpty docker run -it --name gbe_server -p 9000:9000 --mount type=bind,source="$(pwd)",target=/app mkozi/gbe_server
 ```
+## GraphQL Playground Examples
+```graphql
+# Get Jobs
+query {
+  jobs {
+    id
+    title
+    description
+    company {
+      id
+      name
+      description
+    }
+  }
+}
+
+# Get Job
+query Job($id: ID!) {
+  job(id: $id) {
+    id
+    title
+    company {
+      id
+      name
+    }
+    description
+  }
+}
+{
+  "id": "H19PMIoRB"
+}
+
+# Get Company
+query CompanyQry($id: ID!) {
+  company(id: $id) {
+    id
+    name
+    description
+    jobs {
+      id
+      title
+    }
+  }
+}
+{
+  "id": "HJRa-DOuG"
+}
+
+# Create Job
+mutation CreateJob($request: CreateJobInput!) {
+  job: createJob(request: $request) {
+    id
+    title
+    description
+    company {
+      name
+    }
+  }
+}
+{
+  "request": {
+    "companyId": "HJRa-DOuG",
+    "title": "title 4",
+    "description": "description 4"
+  }
+}
+```
