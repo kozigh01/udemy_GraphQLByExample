@@ -2,9 +2,12 @@ const db = require('./db');
 
 const Mutation = {
     createJob: (root, {input}, context) => {
-        const { companyId, title, description } = input;
-        const id = db.jobs.create({companyId, title, description});
+        if (!context.user) {
+            throw new Error('Unauthorized');
+        }
+        const id = db.jobs.create({...input, companyId: context.user.companyId});
         return db.jobs.get(id);
+        return null;
     }
 }
 

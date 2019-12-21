@@ -7,6 +7,7 @@
 - Apollo Server: [docs](https://www.apollographql.com/docs/) | [Apollo Server](https://www.apollographql.com/docs/apollo-server/) | [Integrating with Node.js](https://www.apollographql.com/docs/apollo-server/integrations/middleware/) | [Gql Playground](https://www.apollographql.com/docs/apollo-server/testing/graphql-playground/)
 - Express.js: [site](http://expressjs.com/)
 - Fake database: [notarealdb](https://www.npmjs.com/package/notarealdb)
+- JWT: [express-jwt](https://www.npmjs.com/package/express-jwt)
 
 ## Running project
 

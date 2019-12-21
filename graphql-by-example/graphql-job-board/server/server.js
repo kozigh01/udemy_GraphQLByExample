@@ -25,7 +25,11 @@ app.use(cors(), bodyParser.json(), expressJwt({
 // instead of coding the schema in the server file, can instead define in another file and import
 const typeDefs = gql(fs.readFileSync('./schema.graphql', { encoding: 'utf8' }));
 const resolvers = require('./resolvers');
-const apolloServre = new ApolloServer({ typeDefs, resolvers });
+const context = ({req}) => ({
+  method: req.method,
+  user: req.user && db.users.get(req.user.sub)
+});
+const apolloServre = new ApolloServer({typeDefs, resolvers, context});
 apolloServre.applyMiddleware({ app, path: '/graphql' });
 
 
