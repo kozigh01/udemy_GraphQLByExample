@@ -1,6 +1,13 @@
 import { isLoggedIn, getAccessToken} from './auth';
+import { ApolloClient, HttpLink, InMemoryCache, gql } from 'apollo-boost';
+// import { gql } from 'graphql-tag';
 
 const endpointURL = "http://localhost:9000/graphql";
+
+const client = new ApolloClient({
+  link: new HttpLink({uri: endpointURL}),
+  cache: new InMemoryCache()
+});
 
 async function graphqlRequest(query, variables={}) {
   const request = {
@@ -58,7 +65,7 @@ export async function loadCompany(id) {
 }
 
 export async function loadJobs() {
-  const query = `
+  const query = gql`
   query {
     jobs {
       id
@@ -69,8 +76,8 @@ export async function loadJobs() {
       }
     }
   }`;
-  const data = await graphqlRequest(query);
-  return data.jobs;
+  const {data: {jobs}} = await client.query({query});
+  return jobs;
 }
 
 export async function loadJob(id) {
