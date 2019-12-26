@@ -3,7 +3,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "start": "nodemon --ignore data server.js"
+    "start": "nodemon -L --ignore data/ --watch . server.js"
   },
   "dependencies": {
     "apollo-server-express": "2.9.6",
