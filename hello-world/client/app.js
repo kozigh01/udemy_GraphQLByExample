@@ -19,6 +19,7 @@ async function fetchGreeting() {
     return data;
 }
 
+
 fetchGreeting().then( ({greeting}) => {
     const title = document.querySelector('h1');
     title.innerText = greeting;
